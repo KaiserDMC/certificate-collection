@@ -1,3 +1,1 @@
-layout: page
-title: "Contacts"
-permalink: /about/contacts
+# How to reach me
