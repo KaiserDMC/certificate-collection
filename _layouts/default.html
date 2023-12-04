@@ -22,11 +22,9 @@
         <p>{{ page.description | default: site.description | default: site.github.project_tagline }}</p>
       </header>
 
-     <a href="{{ site.github.repository_url }}">
-        <div id="banner">
+    <div id="banner" onclick="window.location='{{ site.github.repository_url }}';" style="cursor: pointer;">
         <span id="logo"></span>
-        </div>
-    </a>
+    </div>
 
        <a href="{{ site.github.io }}/contacts" class="button fork"><strong>Contacts</strong></a>
         {% if site.show_downloads %}
