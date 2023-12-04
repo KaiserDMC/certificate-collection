@@ -3,6 +3,6 @@ plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
 
 title: [CC]
-description: [A collection of all my work related certificates, gathered throughout the years]
+description: [A collection of all my work related certificates gathered throughout the years]
 
 show_downloads: [true]
