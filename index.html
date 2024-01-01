@@ -10,6 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="shortcut icon" href="images/00-icons/icon.png" sizes="32x32">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500,600,700&display=swap" rel="stylesheet">
@@ -215,6 +216,26 @@
     .btn-validator {margin: 3rem 0;border-radius: 1.5rem;align-items: center;}
     .btn-validator::before {content: "";display: block;width: 16px;height: 16px;background-position: center;background-repeat: no-repeat;background-size: 16px;margin-right: 12px;background-image: url("data:image/svg+xml,%3Csvg fill='%23fff' xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-check-circle-fill' viewBox='0 0 16 16'%3E%3Cpath d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z'/%3E%3C/svg%3E");}
     caption {padding: 0.75rem;border: 1px solid #e7e9ed;border-top: 0;font-size: 0.9rem;background-color: #f2f2f24d;}
+	
+	// Color mode variables in _root.scss
+@include color-mode(dark) {
+  :root {
+        --base02: #3e4451;
+        --base03: #868e96;
+        --base04: #868e96;
+        --base05: #abb2bf;
+        --base06: #b6bdca;
+        --base07: #feb272;
+        --base08: #6edff6;
+        --base09: #feb272;
+        --base0A: #ffe69c;
+        --base0B: #79dfc1;
+        --base0C: #79dfc1;
+        --base0D: #6ea8fe;
+        --base0E: #c29ffa;
+        --base0F: #ea868f;
+      }
+}
   </style>
 </head>
 
@@ -235,6 +256,8 @@
             <span class="badge bg-primary"></span>
           </div>
         </div>
+		
+		
         
         <div class="docs-top-utilities d-flex justify-content-end align-items-center gap-3">
           <div class="top-search-box d-none d-lg-flex">
@@ -243,6 +266,14 @@
               <div id="results"></div>
             </form>
           </div>
+		  
+		  <div class="custom-control custom-switch dark-mode-toggle">
+  <input type="checkbox" class="custom-control-input" id="darkModeToggle">
+  <label class="custom-control-label" for="darkModeToggle">
+    <span class="moon">&#9790;</span>
+    <span class="sun">&#9728;</span>
+  </label>
+</div>
 
           <button type="button" class="btn-changelog btn btn-primary d-none d-lg-flex" data-bs-toggle="modal" data-bs-target="#changelogModal">
             Changelog
@@ -1139,6 +1170,23 @@
         </div>
     </div>
   </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script>
+  window.addEventListener('load', (event) => {
+    const darkModeToggle = document.getElementById('darkModeToggle');
+
+    darkModeToggle.addEventListener('change', () => {
+      const htmlElement = document.body;
+
+      if (darkModeToggle.checked) {
+        htmlElement.setAttribute("data-bs-theme", "dark");
+      } else {
+        htmlElement.setAttribute("data-bs-theme", "light");
+      }
+    });
+  });
+</script>
 
   <script>
     /*!
